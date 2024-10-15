@@ -1,0 +1,114 @@
+body {
+    font-family: 'Roboto', sans-serif;  /* Police Roboto correctement appliquée */
+    background-color: #f0f8ff; /* Bleu clair pour un fond propre */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #001f3f; /* Bleu nuit */
+    color: white;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+button {
+    background-color: #007bff; /* Bleu électrique */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Correct box-shadow */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #001f3f;
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Section Roadmap - Animation des icônes */
+ul li {
+    transition: all 0.3s ease; /* Transition douce */
+}
+
+ul li:hover {
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+
+#progress-bar-container {
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 10px;
+    height: 30px;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745; /* Vert de progression */
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+#collecte p {
+    font-size: 18px;
+    color: #333;
+}
+#faq {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    color: #001f3f;
+    cursor: pointer;
+}
+
+.faq-item p {
+    margin: 10px 0;
+    display: none; /* Cache la réponse initialement */
+}
+
+.faq-item h3:hover {
+    color: #007bff;
+}

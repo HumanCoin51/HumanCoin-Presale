@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanCoin - Prévente de $HUMC</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS pour le style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Page d'accueil -->
+    <header>
+        <h1>HumanCoin ($HUMC) - La révolution du meme coin</h1>
+        <p>7 milliards de coins disponibles, correspondant à chaque être humain sur Terre. Saisis ta chance de sauver le maximum d'humains des griffes du destin !</p>
+        <p>Les mâchoires capitalistes vont engloutir des nations entières, seras-tu capable de réunir des dizaines, des milliers, voire des millions d'Humains avec toi ?</p>
+        <button>Rejoindre la prévente</button> <!-- Bouton qui mènera à la section Prévente -->
+    </header>
+
+    <!-- Section Prévente -->
+    <section id="prevente">
+        <h2>Prévente de HumanCoin</h2>
+        <p>Détenteur ou détenu ? Un seul HumanCoin te correspond sur les 7 milliards disponibles, dépêche-toi de l'acquérir avant qu'un autre ne fasse de toi un détenu !</p>
+        <p>Tu te sens l'âme d'un fédérateur, d'un sauveur ou d'un collectionneur ? Mets la main sur des quartiers, des villes, des régions, voire des pays entiers d'HumanCoin.</p>
+
+        <!-- Formulaire d'achat des jetons -->
+        <form action="achat.php" method="POST">
+            <label for="adresse">Adresse Wallet :</label>
+            <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse Ethereum" required>
+            
+            <label for="montant">Montant en $HUMC :</label>
+            <input type="number" id="montant" name="montant" min="1" placeholder="Nombre de $HUMC" required>
+            
+            <button type="submit">Acheter des $HUMC</button>
+        </form>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap">
+        <h2>Roadmap de $HUMC</h2>
+        <ul>
+            <li><i class="fas fa-rocket"></i> <strong>Phase 1 :</strong> Lancement du projet et création du smart contract</li>
+            <li><i class="fas fa-users"></i> <strong>Phase 2 :</strong> Prévente des jetons et constitution de la communauté</li>
+            <li><i class="fas fa-exchange-alt"></i> <strong>Phase 3 :</strong> Listing du $HUMC sur les échanges décentralisés (DEX)</li>
+            <li><i class="fas fa-leaf"></i> <strong>Phase 4 :</strong> Lancement des projets humanistes et écologistes</li>
+        </ul>
+    </section>
+
+    <!-- Section de Collecte en temps réel -->
+    <section id="collecte">
+        <h2>Collecte des fonds en temps réel</h2>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p>Montant collecté : <span id="montant-collecte">0</span> $HUMC</p>
+        <p>Objectif : 10 000 000 $HUMC</p>
+    </section>
+
+    <script>
+        let montantCollecte = 0;
+        const objectif = 10000000; // 10 millions de $HUMC
+        const interval = setInterval(() => {
+            if (montantCollecte >= objectif) {
+                clearInterval(interval); // Arrête l'intervalle quand l'objectif est atteint
+            } else {
+                montantCollecte += Math.floor(Math.random() * 50000); // Simule une collecte aléatoire
+                document.getElementById('montant-collecte').innerText = montantCollecte.toLocaleString();
+                const pourcentage = (montantCollecte / objectif) * 100;
+                document.getElementById('progress-bar').style.width = pourcentage + '%';
+            }
+        }, 1000); // Met à jour chaque seconde
+    </script>
+
+    <!-- Section FAQ -->
+    <section id="faq">
+        <h2>FAQ - Questions fréquentes</h2>
+        <div class="faq-item">
+            <h3>Qu'est-ce que HumanCoin ($HUMC) ?</h3>
+            <p>$HUMC est un meme coin unique avec une offre limitée à 7 milliards, un pour chaque être humain sur Terre.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Comment participer à la prévente ?</h3>
+            <p>Pour participer, entrez votre adresse Ethereum et le montant en $HUMC dans la section prévente.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Est-ce que $HUMC est sécurisé ?</h3>
+            <p>Oui, $HUMC est basé sur la technologie blockchain, garantissant transparence et sécurité des transactions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Quels sont les frais de transaction ?</h3>
+            <p>Les frais sont minimes et dépendent de la blockchain utilisée pour l'achat de $HUMC.</p>
+        </div>
+    </section>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item h3');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
