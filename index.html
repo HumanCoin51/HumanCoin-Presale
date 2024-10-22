@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HumanCoin - Prévente de $HUMC</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS pour le style -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HumanCoin - Prévente de $HUMC</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    
 <body>
+     <!-- Bannière de navigation en haut à gauche -->
+     <nav class="navbar">
+        <ul>
+            <li><a href="#prevente">Prévente</a></li>
+            <li><a href="#funds">Collecte de fonds</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
 
     <!-- Page d'accueil -->
     <header>
-        <h1>HumanCoin ($HUMC) - La révolution du meme coin</h1>
-        <p>7 milliards de coins disponibles, correspondant à chaque être humain sur Terre. Saisis ta chance de sauver le maximum d'humains des griffes du destin !</p>
+        <img src="visuel-prevente.png" alt="Image Prévente" class="header-img">
+        <h1>HumanCoin ($HUMC) - La révolution est en marche</h1>
+        <p>HumanCoin est la premiere cryptomonnaie permettant la tokenisation de notre civilisation.</p>
+        <p>8,2 milliards de jetons disponibles, chaque jeton correspondant à un être humain sur Terre.</p>
+        <p>Saisis ta chance de sauver le maximum d'humains des griffes du destin !</p>
         <p>Les mâchoires capitalistes vont engloutir des nations entières, seras-tu capable de réunir des dizaines, des milliers, voire des millions d'Humains avec toi ?</p>
-        <button>Rejoindre la prévente</button> <!-- Bouton qui mènera à la section Prévente -->
+        <button>Rejoindre la prévente</button>
     </header>
-
+    
     <!-- Section Prévente -->
     <section id="prevente">
         <h2>Prévente de HumanCoin</h2>
-        <p>Détenteur ou détenu ? Un seul HumanCoin te correspond sur les 7 milliards disponibles, dépêche-toi de l'acquérir avant qu'un autre ne fasse de toi un détenu !</p>
-        <p>Tu te sens l'âme d'un fédérateur, d'un sauveur ou d'un collectionneur ? Mets la main sur des quartiers, des villes, des régions, voire des pays entiers d'HumanCoin.</p>
-
-        <!-- Formulaire d'achat des jetons -->
+        <p>Détenteur ou détenu ? Un seul HumanCoin te correspond sur les 8,2 milliards disponibles, dépêche-toi de l'acquérir avant qu'un autre ne fasse de toi un détenu !</p>
         <form action="achat.php" method="POST">
             <label for="adresse">Adresse Wallet :</label>
             <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse Ethereum" required>
@@ -34,6 +43,14 @@
             
             <button type="submit">Acheter des $HUMC</button>
         </form>
+    </section>
+
+    <!-- Section de collecte de fonds en temps réel -->
+    <section id="funds">
+        <h2>Collecte de fonds en temps réel</h2>
+        <div id="total-tokens">
+            <!-- Les chiffres seront insérés dynamiquement ici -->
+        </div>
     </section>
 
     <!-- Roadmap -->
@@ -46,38 +63,14 @@
             <li><i class="fas fa-leaf"></i> <strong>Phase 4 :</strong> Lancement des projets humanistes et écologistes</li>
         </ul>
     </section>
-
-    <!-- Section de Collecte en temps réel -->
-    <section id="collecte">
-        <h2>Collecte des fonds en temps réel</h2>
-        <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-        </div>
-        <p>Montant collecté : <span id="montant-collecte">0</span> $HUMC</p>
-        <p>Objectif : 10 000 000 $HUMC</p>
-    </section>
-
-    <script>
-        let montantCollecte = 0;
-        const objectif = 10000000; // 10 millions de $HUMC
-        const interval = setInterval(() => {
-            if (montantCollecte >= objectif) {
-                clearInterval(interval); // Arrête l'intervalle quand l'objectif est atteint
-            } else {
-                montantCollecte += Math.floor(Math.random() * 50000); // Simule une collecte aléatoire
-                document.getElementById('montant-collecte').innerText = montantCollecte.toLocaleString();
-                const pourcentage = (montantCollecte / objectif) * 100;
-                document.getElementById('progress-bar').style.width = pourcentage + '%';
-            }
-        }, 1000); // Met à jour chaque seconde
-    </script>
+    
 
     <!-- Section FAQ -->
     <section id="faq">
         <h2>FAQ - Questions fréquentes</h2>
         <div class="faq-item">
             <h3>Qu'est-ce que HumanCoin ($HUMC) ?</h3>
-            <p>$HUMC est un meme coin unique avec une offre limitée à 7 milliards, un pour chaque être humain sur Terre.</p>
+            <p>$HUMC est un memecoin unique avec une offre limitée à 8,2 milliards de jetons, un pour chaque être humain sur Terre.</p>
         </div>
 
         <div class="faq-item">
@@ -106,5 +99,7 @@
         });
     </script>
 
+    <!-- JavaScript inclusion -->
+    <script src="app.js"></script> <!-- Lien vers le fichier JS -->
 </body>
 </html>
