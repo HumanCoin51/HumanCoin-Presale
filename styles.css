@@ -7,15 +7,17 @@ body {
     color: #333;
     text-align: center;
 }
-/* Bannière de navigation */
+
+/* Bannière de navigation fixe */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 31, 63, 0.8); /* Bleu nuit avec transparence */
-    padding: 10px;
-    z-index: 999; /* S'assurer que la bannière est toujours au-dessus */
+    background-color: #333;
+    padding: 15px 0;
+    z-index: 1000;
+    text-align: center;
 }
 
 .navbar ul {
@@ -23,76 +25,156 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: left;
+    justify-content: center;
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .navbar ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
+    font-size: 1.2rem;
 }
 
 .navbar ul li a:hover {
-    color: #007bff; /* Couleur au survol */
+    color: #ffd700;
+    transition: color 0.3s ease;
 }
 
-/* Header Section avec image de fond */
-/* Image dans le header */
-.header-img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-/* Header Section avec image de fond */
-/* Image dans le header */
-.header-img {
-    width: 100%; /* Ajuste la taille selon tes préférences */
-    max-height: 500px; /* Ajuste la hauteur si nécessaire */
-    object-fit: cover; /* S'assure que l'image soit bien coupée si nécessaire */
-    display: block;
-    margin: 0 auto;
-}
-
-header h1, header p, button {
+/* Section avec image de fond sous la bannière */
+.hero-section {
+    background: url('visuel-prevente.png') no-repeat center center;
+    background-size: cover;
+    height: 600px;
     position: relative;
-    z-index: 2; /* Texte au-dessus de l'image */
+    margin-top: 70px; /* Compense la hauteur de la bannière fixe */
 }
 
-header h1 {
-    font-size: 48px;
+/* Section du texte sous l'image */
+.hero-text {
+    background-color: #f4f4f4; /* Couleur de fond pour séparer du reste */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-text .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
-header p {
-    font-size: 18px;
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
+.hero-text .cta-button {
+    background-color: #ffd700;
+    color: #333;
     padding: 15px 30px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+.hero-text .cta-button:hover {
+    background-color: #ffc700;
+    transform: scale(1.05);
+}
+
+/* Stylisation du texte pour le prix au lancement */
+.launch-price {
+    font-size: 1.5rem !important; /* Taille légèrement plus grande pour attirer l'attention */
+    font-weight: bold !important; /* Met le texte en gras */
+    color: #007bff !important; /* Bleu pour correspondre à la charte de couleur du site */
+    margin-top: 20px !important; /* Espacement par rapport au texte précédent */
+    background-color: #f4f4f4 !important; /* Couleur de fond claire pour la rendre distincte */
+    padding: 10px !important; /* Ajoute un peu de rembourrage autour du texte */
+    border-radius: 5px !important; /* Bords arrondis pour adoucir */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) !important; /* Légère ombre pour effet 3D */
+    display: inline-block !important; /* Pour que la largeur du bloc s'adapte au texte */
 }
 
 /* Section Prévente */
 #prevente {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
 }
 
-/* Conteneur pour chaque chiffre avec un fond vert clair et bords arrondis */
+#prevente h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #001f3f;
+}
+
+/* Conteneur stylisé pour la prévente */
+.prevente-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+#prevente form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#prevente label {
+    font-size: 1rem;
+    color: #444;
+}
+
+#prevente input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#prevente button {
+    background-color: #ffd700;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#prevente button:hover {
+    background-color: #ffc700;
+    transform: scale(1.05);
+}
+
+#prevente p {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Section de collecte de fonds */
 .number-box {
     display: inline-block;
     width: 50px;
@@ -100,32 +182,26 @@ button:hover {
     margin: 5px;
     line-height: 50px;
     text-align: center;
-    background-color: #e0f7e9; /* Vert clair */
-    border-radius: 10px; /* Bords arrondis */
-    color: #ccc; /* Couleur gris pâle */
+    background-color: #e0f7e9;
+    border-radius: 10px;
+    color: #ccc;
     font-size: 36px;
     font-weight: bold;
 }
 
 /* Chiffres vendus avec couleur gris foncé */
 .sold {
-    color: #333; /* Gris foncé */
+    color: #333;
 }
 
-/* Séparateurs (espaces, virgules) sans effet visuel */
+/* Séparateurs */
 .separator {
     font-size: 36px;
     margin: 0 5px;
-    color: #333; /* Même couleur que les chiffres vendus */
+    color: #333;
 }
 
 /* Roadmap */
-#roadmap i {
-    margin-right: 10px;
-    font-size: 24px; /* Ajuste la taille de l'icône */
-    color: #007bff; /* Change la couleur de l'icône */
-}
-
 #roadmap {
     padding: 60px 20px;
 }
@@ -133,23 +209,37 @@ button:hover {
 #roadmap h2 {
     color: #001f3f;
     margin-bottom: 40px;
+    font-size: 2.5rem;
 }
 
 #roadmap ul {
     list-style: none;
     padding: 0;
+    margin-bottom: 40px;
 }
 
 #roadmap ul li {
     font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#roadmap h3 {
+    margin-top: 60px;
+    font-size: 2rem;
+    color: #007bff;
+}
+
+#roadmap p {
+    font-size: 1.1rem;
     margin-bottom: 20px;
+    color: #333;
 }
 
 /* FAQ Section */
 #faq {
     padding: 60px 20px;
     background-color: #f8f9fa;
-    text-align: center; /* Centrer tout le contenu de la FAQ */
+    text-align: center;
 }
 
 #faq h2 {
@@ -166,7 +256,6 @@ button:hover {
     font-size: 24px;
     color: #007bff;
     cursor: pointer;
-    text-align: center;
 }
 
 .faq-item h3:hover {
