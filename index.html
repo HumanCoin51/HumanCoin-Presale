@@ -1,53 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HumanCoin - Prévente de $HUMC</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HumanCoin - La première cryptomonnaie qui tokenise l'humanité. 8,2 milliards de jetons pour chaque être humain sur Terre.">
+    <meta property="og:title" content="HumanCoin - Prévente de $HUMC">
+    <meta property="og:description" content="Rejoignez la révolution HumanCoin et participez à la prévente de $HUMC. Un jeton par être humain, 8,2 milliards disponibles.">
+    <meta property="og:image" content="visuel-prevente.png">
+    <meta property="og:url" content="https://humancoin.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>HumanCoin - Prévente de $HUMC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
 <body>
-     <!-- Bannière de navigation en haut à gauche -->
-     <nav class="navbar">
+    <!-- Bannière de navigation fixe en haut de la page -->
+    <nav class="navbar">
         <ul>
             <li><a href="#prevente">Prévente</a></li>
             <li><a href="#funds">Collecte de fonds</a></li>
             <li><a href="#roadmap">Roadmap</a></li>
             <li><a href="#faq">FAQ</a></li>
+            <!-- Menu de sélection de langue dans la bannière -->
+            <li>
+                <select id="language-select">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="it">Italiano</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ru">Русский</option>
+                    <option value="es">Español</option>
+                </select>
+            </li>
         </ul>
     </nav>
 
-    <!-- Page d'accueil -->
-    <header>
-        <img src="visuel-prevente.png" alt="Image Prévente" class="header-img">
-        <h1>HumanCoin ($HUMC) - La révolution est en marche</h1>
-        <p>HumanCoin est la premiere cryptomonnaie permettant la tokenisation de notre civilisation.</p>
-        <p>8,2 milliards de jetons disponibles, chaque jeton correspondant à un être humain sur Terre.</p>
-        <p>Saisis ta chance de sauver le maximum d'humains des griffes du destin !</p>
-        <p>Les mâchoires capitalistes vont engloutir des nations entières, seras-tu capable de réunir des dizaines, des milliers, voire des millions d'Humains avec toi ?</p>
-        <button>Rejoindre la prévente</button>
+    <!-- Bannière avec uniquement l'image de fond -->
+    <header class="hero-section">
     </header>
-    
+
+    <!-- Section avec le texte sous l'image -->
+    <section class="hero-text">
+        <div class="hero-content">
+            <h1 id="hero-title">HumanCoin ($HUMC) - La révolution est en marche</h1>
+            <p id="hero-subtitle">HumanCoin est la première cryptomonnaie permettant la tokenisation de notre civilisation.</p>
+            <p id="hero-line1">8,2 milliards de jetons disponibles, chaque jeton correspondant à un être humain sur Terre.</p>
+            <p id="hero-line2">Saisis ta chance de sauver le maximum d'humains des griffes du destin !</p>
+            <p class="launch-price" id="launch-price">Prix au lancement : 0,01€/HumanCoin</p>
+            <button class="cta-button">Rejoindre la prévente</button>
+        </div>
+    </section>
+
     <!-- Section Prévente -->
     <section id="prevente">
-        <h2>Prévente de HumanCoin</h2>
-        <p>Détenteur ou détenu ? Un seul HumanCoin te correspond sur les 8,2 milliards disponibles, dépêche-toi de l'acquérir avant qu'un autre ne fasse de toi un détenu !</p>
-        <form action="achat.php" method="POST">
-            <label for="adresse">Adresse Wallet :</label>
-            <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse Ethereum" required>
-            
-            <label for="montant">Montant en $HUMC :</label>
-            <input type="number" id="montant" name="montant" min="1" placeholder="Nombre de $HUMC" required>
-            
-            <button type="submit">Acheter des $HUMC</button>
-        </form>
+        <div class="prevente-container">
+            <h2 id="prevente-title">Prévente de HumanCoin</h2>
+            <p id="prevente-text">Détenteur ou détenu ? Un seul HumanCoin te correspond sur les 8,2 milliards disponibles. Dépêche-toi de l'acquérir avant qu'un autre ne fasse de toi un détenu !</p>
+            <form action="achat.php" method="POST">
+                <label id="wallet-label" for="adresse">Adresse Wallet :</label>
+                <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse Solana" required>
+                
+                <label id="amount-label" for="montant">Montant en $HUMC :</label>
+                <input type="number" id="montant" name="montant" min="1" placeholder="Nombre de $HUMC" required>
+                
+                <button type="submit" class="cta-button" id="buy-button">Acheter des $HUMC</button>
+            </form>
+        </div>
     </section>
 
     <!-- Section de collecte de fonds en temps réel -->
     <section id="funds">
-        <h2>Collecte de fonds en temps réel</h2>
+        <h2 id="funds-title">Nombre d'HumanCoin actuellement détenu</h2>
         <div id="total-tokens">
             <!-- Les chiffres seront insérés dynamiquement ici -->
         </div>
@@ -55,15 +79,37 @@
 
     <!-- Roadmap -->
     <section id="roadmap">
-        <h2>Roadmap de $HUMC</h2>
+        <h2 id="roadmap-title">Roadmap de HumanCoin - Un Voyage vers l'Impact Social et l'Innovation</h2>
+        <p>Découvrez la trajectoire ambitieuse de HumanCoin, une cryptomonnaie révolutionnaire visant à transformer la façon dont nous investissons et interagissons.</p>
+
+        <h3>Phase 1 : Conception et Développement</h3>
         <ul>
-            <li><i class="fas fa-rocket"></i> <strong>Phase 1 :</strong> Lancement du projet et création du smart contract</li>
-            <li><i class="fas fa-users"></i> <strong>Phase 2 :</strong> Prévente des jetons et constitution de la communauté</li>
-            <li><i class="fas fa-exchange-alt"></i> <strong>Phase 3 :</strong> Listing du $HUMC sur les échanges décentralisés (DEX)</li>
-            <li><i class="fas fa-leaf"></i> <strong>Phase 4 :</strong> Lancement des projets humanistes et écologistes</li>
+            <li>✈ <strong>Smart Contract sur Solana</strong> : Rapide, sûr, et efficace pour une prévente sans obstacles.</li>
+            <li>🛍️ <strong>Interface Utilisateur Simplifiée</strong> : Une plateforme claire et intuitive pour faciliter l’achat de $HUMC.</li>
+            <li>📝 <strong>Documentation Transparente</strong> : Publication de rapports clairs pour informer les investisseurs.</li>
+        </ul>
+
+        <h3>Phase 2 : Prévente et Stratégie de Croissance</h3>
+        <ul>
+            <li>💸 <strong>Prévente Exclusive</strong> : Les premiers investisseurs peuvent acheter $HUMC à un prix réduit.</li>
+            <li>📱 <strong>Campagnes Marketing Impactantes</strong> : Utilisation des réseaux sociaux, influenceurs et plateformes crypto-clés.</li>
+            <li>🔥 <strong>Communauté Active</strong> : Intégration dans une communauté passionnée et engagée.</li>
+        </ul>
+
+        <h3>Phase 3 : Listing sur les Échanges et Augmentation de la Visibilité</h3>
+        <ul>
+            <li>🏦 <strong>Intégration sur les DEX</strong> : Listing de $HUMC sur les principales plateformes d’échanges décentralisées.</li>
+            <li>💹 <strong>Inscription sur CoinMarketCap et CoinGecko</strong> : Statistiques et visibilité en temps réel.</li>
+            <li>👊 <strong>Airdrops Stratégiques</strong> : Distribution gratuite de jetons pour attirer de nouveaux investisseurs.</li>
+        </ul>
+
+        <h3>Phase 4 : Lancer des Projets Humanistes et Écologiques</h3>
+        <ul>
+            <li>🏠 <strong>Projets Humanitaires</strong> : Investissements dans la construction d’écoles, l’eau potable, etc.</li>
+            <li>🌱 <strong>Projets Écologiques</strong> : Partenariats pour des reboisements et pratiques agricoles durables.</li>
+            <li>🧠 <strong>Communauté Investie</strong> : Événements et réunions d’investisseurs pour renforcer les liens communautaires.</li>
         </ul>
     </section>
-    
 
     <!-- Section FAQ -->
     <section id="faq">
@@ -89,17 +135,7 @@
         </div>
     </section>
 
-    <script>
-        const faqItems = document.querySelectorAll('.faq-item h3');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
-
-    <!-- JavaScript inclusion -->
-    <script src="app.js"></script> <!-- Lien vers le fichier JS -->
+    <!-- Script FAQ pour basculer les réponses -->
+    <script src="app.js"></script>
 </body>
 </html>
