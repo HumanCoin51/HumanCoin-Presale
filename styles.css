@@ -1,21 +1,73 @@
+/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;  /* Police Roboto correctement appliquée */
-    background-color: #f0f8ff; /* Bleu clair pour un fond propre */
-    color: #333;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
     text-align: center;
 }
+/* Bannière de navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 31, 63, 0.8); /* Bleu nuit avec transparence */
+    padding: 10px;
+    z-index: 999; /* S'assurer que la bannière est toujours au-dessus */
+}
 
-header {
-    background-color: #001f3f; /* Bleu nuit */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
     color: white;
-    padding: 40px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #007bff; /* Couleur au survol */
+}
+
+/* Header Section avec image de fond */
+/* Image dans le header */
+.header-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+/* Header Section avec image de fond */
+/* Image dans le header */
+.header-img {
+    width: 100%; /* Ajuste la taille selon tes préférences */
+    max-height: 500px; /* Ajuste la hauteur si nécessaire */
+    object-fit: cover; /* S'assure que l'image soit bien coupée si nécessaire */
+    display: block;
+    margin: 0 auto;
+}
+
+header h1, header p, button {
+    position: relative;
+    z-index: 2; /* Texte au-dessus de l'image */
 }
 
 header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 header p {
@@ -23,92 +75,110 @@ header p {
 }
 
 button {
-    background-color: #007bff; /* Bleu électrique */
+    background-color: #007bff;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 15px 30px;
     border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Correct box-shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-section {
-    padding: 40px 20px;
-    margin-bottom: 40px;
-    background-color: #f0f8ff;
-    border-radius: 8px;
+/* Section Prévente */
+#prevente {
+    padding: 60px 20px;
 }
 
-h2 {
+/* Conteneur pour chaque chiffre avec un fond vert clair et bords arrondis */
+.number-box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #e0f7e9; /* Vert clair */
+    border-radius: 10px; /* Bords arrondis */
+    color: #ccc; /* Couleur gris pâle */
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Chiffres vendus avec couleur gris foncé */
+.sold {
+    color: #333; /* Gris foncé */
+}
+
+/* Séparateurs (espaces, virgules) sans effet visuel */
+.separator {
+    font-size: 36px;
+    margin: 0 5px;
+    color: #333; /* Même couleur que les chiffres vendus */
+}
+
+/* Roadmap */
+#roadmap i {
+    margin-right: 10px;
+    font-size: 24px; /* Ajuste la taille de l'icône */
+    color: #007bff; /* Change la couleur de l'icône */
+}
+
+#roadmap {
+    padding: 60px 20px;
+}
+
+#roadmap h2 {
     color: #001f3f;
+    margin-bottom: 40px;
+}
+
+#roadmap ul {
+    list-style: none;
+    padding: 0;
+}
+
+#roadmap ul li {
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
-form {
-    margin: 20px 0;
-}
-
-input {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Section Roadmap - Animation des icônes */
-ul li {
-    transition: all 0.3s ease; /* Transition douce */
-}
-
-ul li:hover {
-    transform: scale(1.05); /* Agrandir légèrement au survol */
-}
-
-#progress-bar-container {
-    width: 100%;
-    background-color: #ccc;
-    border-radius: 10px;
-    height: 30px;
-    margin: 20px 0;
-}
-
-#progress-bar {
-    height: 100%;
-    width: 0%;
-    background-color: #28a745; /* Vert de progression */
-    border-radius: 10px;
-    transition: width 0.5s ease;
-}
-
-#collecte p {
-    font-size: 18px;
-    color: #333;
-}
+/* FAQ Section */
 #faq {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center; /* Centrer tout le contenu de la FAQ */
+}
+
+#faq h2 {
+    color: #001f3f;
+    margin-bottom: 20px;
 }
 
 .faq-item {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .faq-item h3 {
-    color: #001f3f;
+    font-size: 24px;
+    color: #007bff;
     cursor: pointer;
-}
-
-.faq-item p {
-    margin: 10px 0;
-    display: none; /* Cache la réponse initialement */
+    text-align: center;
 }
 
 .faq-item h3:hover {
-    color: #007bff;
+    color: #0056b3;
+}
+
+.faq-item p {
+    display: none;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.faq-item.visible p {
+    display: block;
 }
