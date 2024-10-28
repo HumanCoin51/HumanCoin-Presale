@@ -43,10 +43,53 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Ajustement du style et de la position du menu de sélection des langues */
+.navbar ul li select#language-select {
+    margin-top: -3px; /* Ajustez cette valeur pour aligner verticalement */
+    padding: 5px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffd700; /* Couleur de fond jaune */
+    color: #333; /* Couleur du texte */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar ul li select#language-select:hover {
+    background-color: #ffc700; /* Changement de couleur au survol */
+    transform: scale(1.05);
+}
+
+/* Style pour le menu de sélection de langue */
+#language-select {
+    background-color: #ffd700; /* Couleur de fond dorée */
+    color: #333; /* Couleur du texte */
+    font-size: 1rem;
+    padding: 8px 15px;
+    border: 2px solid #333; /* Bordure foncée */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet de survol pour le menu de sélection de langue */
+#language-select:hover {
+    background-color: #ffc700; /* Couleur de fond plus claire au survol */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+/* Style pour le texte du menu */
+#language-select option {
+    background-color: #ffffff; /* Couleur de fond des options */
+    color: #333; /* Couleur du texte des options */
+}
+
 /* Section avec image de fond sous la bannière */
 .hero-section {
     background: url('visuel-prevente.png') no-repeat center center;
-    background-size: cover;
+    background-size: 65%;
     height: 600px;
     position: relative;
     margin-top: 70px; /* Compense la hauteur de la bannière fixe */
@@ -101,7 +144,12 @@ body {
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) !important; /* Légère ombre pour effet 3D */
     display: inline-block !important; /* Pour que la largeur du bloc s'adapte au texte */
 }
-
+.launch-image {
+    width: 100%; /* Ajuste la largeur à 100% du conteneur parent */
+    max-width: 600px; /* Limite la largeur maximale de l'image */
+    height: auto; /* Conserve les proportions de l'image */
+    margin-top: 20px; /* Ajoute un espace au-dessus de l'image */
+}
 /* Section Prévente */
 #prevente {
     padding: 80px 20px;
@@ -200,7 +248,12 @@ body {
     margin: 0 5px;
     color: #333;
 }
-
+.launch-image2 {
+    width: 100%; /* Ajuste la largeur à 100% du conteneur parent */
+    max-width: 600px; /* Limite la largeur maximale de l'image */
+    height: auto; /* Conserve les proportions de l'image */
+    margin-top: 20px; /* Ajoute un espace au-dessus de l'image */
+}
 /* Roadmap */
 #roadmap {
     padding: 60px 20px;
@@ -270,4 +323,19 @@ body {
 
 .faq-item.visible p {
     display: block;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem; /* Réduit la taille de la police sur les petits écrans */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Change la direction pour les écrans étroits */
+    }
+
+    .launch-image,
+    .launch-image2 {
+        max-width: 100%; /* Assure que les images s'ajustent à la largeur de l'écran */
+    }
 }
