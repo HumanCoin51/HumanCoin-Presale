@@ -22,7 +22,6 @@
             <li><a href="#funds">Collecte de fonds</a></li>
             <li><a href="#roadmap">Roadmap</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <!-- Menu de sélection de langue dans la bannière -->
             <li>
                 <select id="language-select">
                     <option value="fr">Français</option>
@@ -36,23 +35,22 @@
         </ul>
     </nav>
 
-    <!-- Bannière avec uniquement l'image de fond -->
     <header class="hero-section">
     </header>
 
-    <!-- Section avec le texte sous l'image -->
     <section class="hero-text">
         <div class="hero-content">
-            <h1 id="hero-title">HumanCoin ($HUMC) - La révolution est en marche</h1>
+            <h1 id="hero-title">HumanCoin ($HUMC) - L'éspèce Humaine désormais Tokenisée</h1>
             <p id="hero-subtitle">HumanCoin est la première cryptomonnaie permettant la tokenisation de notre civilisation.</p>
             <p id="hero-line1">8,2 milliards de jetons disponibles, chaque jeton correspondant à un être humain sur Terre.</p>
             <p id="hero-line2">Saisis ta chance de sauver le maximum d'humains des griffes du destin !</p>
-            <p class="launch-price" id="launch-price">Prix au lancement : 0,01€/HumanCoin</p>
-            <button class="cta-button">Rejoindre la prévente</button>
+            <p class="launch-price" id="launch-price">Prix au lancement : 0,10$USD/HumanCoin</p>
+            <button class="cta-button" id="buy-button">Rejoindre la prévente</button>
+            <img src="coin.webp" alt="image de pieces humancoin" class="launch-image">
         </div>
     </section>
 
-    <!-- Section Prévente -->
+   
     <section id="prevente">
         <div class="prevente-container">
             <h2 id="prevente-title">Prévente de HumanCoin</h2>
@@ -61,49 +59,52 @@
                 <label id="wallet-label" for="adresse">Adresse Wallet :</label>
                 <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse Solana" required>
                 
-                <label id="amount-label" for="montant">Montant en $HUMC :</label>
+                <label id="amount-label" for="montant"> Combien d'Humains vas tu acheter ?! :</label>
                 <input type="number" id="montant" name="montant" min="1" placeholder="Nombre de $HUMC" required>
-                
+    
+                <!-- Affichage de la conversion en USD -->
+                <p id="usd-conversion">Valeur en USD : $0.00</p>
+    
                 <button type="submit" class="cta-button" id="buy-button">Acheter des $HUMC</button>
             </form>
         </div>
     </section>
-
-    <!-- Section de collecte de fonds en temps réel -->
+    
     <section id="funds">
-        <h2 id="funds-title">Nombre d'HumanCoin actuellement détenu</h2>
+        <h2 id="funds-title">Nombre d'HumanCoin actuellement détenu dans le monde</h2>
         <div id="total-tokens">
             <!-- Les chiffres seront insérés dynamiquement ici -->
+            
         </div>
     </section>
-
+    <img src="terre.webp" alt="image d'une terre" class="launch-image2">
     <!-- Roadmap -->
     <section id="roadmap">
         <h2 id="roadmap-title">Roadmap de HumanCoin - Un Voyage vers l'Impact Social et l'Innovation</h2>
         <p>Découvrez la trajectoire ambitieuse de HumanCoin, une cryptomonnaie révolutionnaire visant à transformer la façon dont nous investissons et interagissons.</p>
 
-        <h3>Phase 1 : Conception et Développement</h3>
+        <h3 id="phase1">Phase 1 : Conception et Développement</h3>
         <ul>
             <li>✈ <strong>Smart Contract sur Solana</strong> : Rapide, sûr, et efficace pour une prévente sans obstacles.</li>
             <li>🛍️ <strong>Interface Utilisateur Simplifiée</strong> : Une plateforme claire et intuitive pour faciliter l’achat de $HUMC.</li>
             <li>📝 <strong>Documentation Transparente</strong> : Publication de rapports clairs pour informer les investisseurs.</li>
         </ul>
 
-        <h3>Phase 2 : Prévente et Stratégie de Croissance</h3>
+        <h3 id="phase2">Phase 2 : Prévente et Stratégie de Croissance</h3>
         <ul>
             <li>💸 <strong>Prévente Exclusive</strong> : Les premiers investisseurs peuvent acheter $HUMC à un prix réduit.</li>
             <li>📱 <strong>Campagnes Marketing Impactantes</strong> : Utilisation des réseaux sociaux, influenceurs et plateformes crypto-clés.</li>
             <li>🔥 <strong>Communauté Active</strong> : Intégration dans une communauté passionnée et engagée.</li>
         </ul>
 
-        <h3>Phase 3 : Listing sur les Échanges et Augmentation de la Visibilité</h3>
+        <h3 id="phase3">Phase 3 : Listing sur les Échanges et Augmentation de la Visibilité</h3>
         <ul>
             <li>🏦 <strong>Intégration sur les DEX</strong> : Listing de $HUMC sur les principales plateformes d’échanges décentralisées.</li>
             <li>💹 <strong>Inscription sur CoinMarketCap et CoinGecko</strong> : Statistiques et visibilité en temps réel.</li>
             <li>👊 <strong>Airdrops Stratégiques</strong> : Distribution gratuite de jetons pour attirer de nouveaux investisseurs.</li>
         </ul>
 
-        <h3>Phase 4 : Lancer des Projets Humanistes et Écologiques</h3>
+        <h3 id="phase4">Phase 4 : Lancer des Projets Humanistes et Écologiques</h3>
         <ul>
             <li>🏠 <strong>Projets Humanitaires</strong> : Investissements dans la construction d’écoles, l’eau potable, etc.</li>
             <li>🌱 <strong>Projets Écologiques</strong> : Partenariats pour des reboisements et pratiques agricoles durables.</li>
@@ -113,29 +114,26 @@
 
     <!-- Section FAQ -->
     <section id="faq">
-        <h2>FAQ - Questions fréquentes</h2>
+        <h2 id="faq-title">FAQ - Questions fréquentes</h2>
         <div class="faq-item">
-            <h3>Qu'est-ce que HumanCoin ($HUMC) ?</h3>
-            <p>$HUMC est un memecoin unique avec une offre limitée à 8,2 milliards de jetons, un pour chaque être humain sur Terre.</p>
+            <h3 id="faq-question1">Qu'est-ce que HumanCoin ($HUMC) ?</h3>
+            <p id="faq-answer1">$HUMC est un memecoin unique avec une offre limitée à 8,2 milliards de jetons, un pour chaque être humain sur Terre.</p>
         </div>
-
         <div class="faq-item">
-            <h3>Comment participer à la prévente ?</h3>
-            <p>Pour participer, entrez votre adresse Ethereum et le montant en $HUMC dans la section prévente.</p>
+            <h3 id="faq-question2">Comment participer à la prévente ?</h3>
+            <p id="faq-answer2">Pour participer, entrez votre adresse Solana et le montant en $HUMC dans la section prévente.</p>
         </div>
-
         <div class="faq-item">
-            <h3>Est-ce que $HUMC est sécurisé ?</h3>
-            <p>Oui, $HUMC est basé sur la technologie blockchain, garantissant transparence et sécurité des transactions.</p>
+            <h3 id="faq-question3">Est-ce que $HUMC est sécurisé ?</h3>
+            <p id="faq-answer3">Oui, $HUMC est basé sur la technologie blockchain, garantissant transparence et sécurité des transactions.</p>
         </div>
-
         <div class="faq-item">
-            <h3>Quels sont les frais de transaction ?</h3>
-            <p>Les frais sont minimes et dépendent de la blockchain utilisée pour l'achat de $HUMC.</p>
+            <h3 id="faq-question4">Quels sont les frais de transaction ?</h3>
+            <p id="faq-answer4">Les frais sont minimes et dépendent de la blockchain utilisée pour l'achat de $HUMC.</p>
         </div>
     </section>
+    
 
-    <!-- Script FAQ pour basculer les réponses -->
     <script src="app.js"></script>
 </body>
 </html>
