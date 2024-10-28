@@ -88,7 +88,7 @@ body {
 
 /* Section avec image de fond sous la bannière */
 .hero-section {
-    background: url('visuel-prevente.png') no-repeat center center;
+    background: url('visuel.png') no-repeat center center;
     background-size: 65%;
     height: 600px;
     position: relative;
